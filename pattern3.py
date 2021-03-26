@@ -1,4 +1,4 @@
-#accept row and column from user and disply
+#accept row and column from user and display
 '''
 # * * *
 * # * *
