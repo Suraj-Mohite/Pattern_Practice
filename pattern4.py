@@ -1,30 +1,30 @@
-"""
-1               1 
-1 2           2 1
-1 2 3       3 2 1
-1 2 3 4   4 3 2 1
-1 2 3 4 5 4 3 2 1 
+#accept row and column from user and disply
+'''
+# * * *
+$ # * *
+$ $ # *
+$ $ $ #
+'''
+def Pattern4(iRow,iCol):
+    if(iRow<0):
+        iRow=-iRow
 
-"""
+    if(iCol<0):
+        iCol=-iCol
 
-
-def pattern4(no):
-    if no<=0:
-        print("Error: Invalid Input")
-    for i in range(1,no+1):
-        val=i
-        if i==no:
-            val=i-1
-        for j in range(1,2*no):
-            if j<=i:
-                print(j,end=" ")
-            elif j>i and j>=2*no-i:
-                print(val,end=" ")
-                val-=1
+    if(iRow!=iCol):
+        print("ERROR:Invalid Input")
+        return
+    for i in range(1,iRow+1):
+        for j in range(1,iCol+1):
+            if(i==j):
+                print("#",end=" ")
+            elif(i<j):
+                print("*",end=" ")
             else:
-                print(" ",end=" ")
+                print("$",end=" ")
         print()
 
-pattern4(5)
-pattern4(0)
-pattern4(-9)
+iRow=int(input("Enter the number of rows.\n"))
+iCol=int(input("Enter the number of columns.\n"))
+Pattern4(iRow,iCol)

@@ -1,23 +1,29 @@
-"""
-*  *  *     *  
-      *     *
-*  *  *  *  *
-*     *
-*     *  *  *
+'''
+11111
+11122
+11333
+14444
+55555
+'''
 
-"""
+def Pattern(row,col):
+    if (row < 0):
+        row = -row
 
-def pattern7(no):
-    if no<=0 or no%2==0:
-        print("ERROE:Invalid input")
+    if (col < 0):
+        col = -col
+
+    if(row!=col):
         return
-    n=(no//2)+1
-    for i in range(1,no+1):
-        for j in range(1,no+1):
-            if i==n or j==n or (i==1 and j<n) or (i==no and j>n) or (j==no and i<n) or (j==1 and i>n):
-                print("*",end="  ")#two spaces for broad pattern
+    for i in range(1,row+1):
+        for j in range(1,col+1):
+            if(j>=((col+1)-i) and j<=col):
+                print(i,end=" ")
             else:
-                print(" ",end="  ")
+                print("1",end=" ")
         print()
-pattern7(5)
-pattern7(6)
+
+iRow=int(input("Enter the row\n"))
+iCol=int(input("Enter the col\n"))
+
+Pattern(iRow,iCol)

@@ -1,27 +1,30 @@
+#accept row and column from user and disply
+'''
+#
+$ #
+$   #
+$ $ $ #
+'''
+def Pattern5(iRow,iCol):
+    if(iRow<0):
+        iRow=-iRow
 
-"""
-      *        
-      *  *
-*  *  *  *  *
-      *  *
-      *
+    if(iCol<0):
+        iCol=-iCol
 
-"""
-
-
-def pattern5(no):
-    if no%2==0:
+    if(iRow!=iCol):
+        print("ERROR:Invalid Input")
         return
-    n=(no//2)+1
-    for i in range(1,no+1):
-        for j in range(1,no+1):
-            if i<n and j>=n and j<n+i:
-                print("*",end="  ") #two spaces for broad pattern
-            elif i==n:
-                print("*",end="  ")
-            elif i>n and j>=n and j<=no-(i-n):
-                print("*",end="  ")
+    for i in range(1,iRow+1):
+        for j in range(1,iCol+1):
+            if(i==j):
+                print("#",end=" ")
+            elif(j==1 or i==iCol):
+                print("$",end=" ")
             else:
-                print(" ",end="  ")
+                print(" ",end=" ")
         print()
-pattern5(5)
+
+iRow=int(input("Enter the number of rows.\n"))
+iCol=int(input("Enter the number of columns.\n"))
+Pattern5(iRow,iCol)
